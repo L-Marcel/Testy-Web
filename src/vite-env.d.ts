@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
+//Components
 declare namespace Carousel {
   export interface PCarousel {
     data: IItem[];
@@ -38,6 +39,15 @@ declare namespace Input {
   }
 }
 
+declare namespace PopUp {
+  export interface PPopUp {
+    text: string;
+    timeToClose: number;
+    isOpen: boolean;
+  }
+}
+
+//Services
 declare namespace User {
   export interface Info {
 
@@ -52,6 +62,9 @@ declare namespace App {
   export interface Context {
     user: User.Info | null;
     setUser: (user: User.Info | null) => void;
+    popUp: PopUp.PPopUp;
+    callPopUp: (text: string, timeToClose?: number) => void;
+    closePopUp: () => void;
   }
   export interface Provider {
     children: JSX.Element;
@@ -63,7 +76,7 @@ declare namespace Login {
   export interface FailureResponse {
     status: "failure";
     error: {
-      code: number,
+      code: string | number,
       message: string,
       email: string,
       credential: any

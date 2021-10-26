@@ -23,12 +23,12 @@ class Firebase {
 
   static async github() {
     const token = await githubSignIn(Firebase.auth);
-    console.log(token);
+    return token;
   };
 
   static async google() {
     const token = await googleSignIn(Firebase.auth);
-    console.log(token);
+    return token;
   };
 };
 
