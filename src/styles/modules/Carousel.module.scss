@@ -1,0 +1,146 @@
+.container {
+  grid-area: body;
+  width: 100%;
+
+  .item {
+    display: none;
+    position: relative;
+
+    .image {
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      height: 350px;
+      width: 350px;
+      animation: imageSpawn .5s ease-in-out;
+    }
+
+    .title {
+      position: absolute;
+      left: 300px;
+      top: 25px;
+      font-weight: 649;
+      font-size: 3rem;
+      color: var(--secondary-color);
+      animation: titleSpawn .8s ease-in-out;
+    }
+
+    .subtitle {
+      position: absolute;
+      left: 335px;
+      top: 75px;
+      font-weight: 649;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      animation: subtitleSpawn 1.2s ease-in-out;
+    }
+
+    .description {
+      position: absolute;
+      left: 360px;
+      top: 115px;
+      font-weight: 400;
+      max-width: 500px;
+      font-size: 1.2rem;
+      color: var(--black);
+      animation: descriptionSpawn 1.8s ease-in-out;
+    }
+
+    @media(max-width: 1150px) { 
+      .image {
+        position: fixed;
+        height: auto;
+        width: auto;
+        justify-self: center;
+        max-width: 100vw;
+        left: -85px;
+        bottom: -80px;
+        animation: mobileImageSpawn .6s ease-in-out;
+      }  
+
+      .title {
+        left: 25px;
+        top: 25px;
+        font-size: 2rem;
+        animation: mobileTitleSpawn .8s ease-in-out;
+      }
+
+      .subtitle {
+        left: 57px;
+        top: 55px;
+        font-size: 1.5rem;
+        animation: mobileSubtitleSpawn 1.2s ease-in-out;
+      }
+
+      .description {
+        display: none;
+      }
+    }
+  }
+
+  .item.selected {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes titleSpawn {
+  0% {
+    left: 250px;
+    opacity: 0;
+  }
+}
+
+
+@keyframes subtitleSpawn {
+  0% {
+    left: 280px;
+    opacity: 0;
+  }
+  50% {
+    left: 280px;
+    opacity: 0;
+  }
+}
+
+@keyframes descriptionSpawn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+}
+
+@keyframes imageSpawn {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes mobileTitleSpawn {
+  0% {
+    left: 50px;
+    opacity: 0;
+  }
+}
+
+
+@keyframes mobileSubtitleSpawn {
+  0% {
+    left: 100px;
+    opacity: 0;
+  }
+  50% {
+    left: 100px;
+    opacity: 0;
+  }
+}
+
+@keyframes mobileImageSpawn {
+  0% {
+    bottom: -90px;
+    opacity: 0;
+  }
+}

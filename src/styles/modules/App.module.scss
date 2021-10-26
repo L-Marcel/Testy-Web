@@ -1,0 +1,37 @@
+.content {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 58px 3fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: 
+  "box box header"
+  "box box body";
+  background-color: var(--white);
+  width: 100vw;
+
+  .box {
+    margin: 14px;
+    background-color: var(--whitesmoke);
+    border-bottom: 20px solid var(--secondary-color);
+    width: auto;
+    border-radius: 14px;
+    justify-self: stretch;
+    grid-area: box;
+  }
+  
+  .body {
+    display: flex;
+    grid-area: body;
+  }
+
+  @media(max-width: 1150px) {
+    grid-template-rows: 60vh 40vh;
+    grid-template-areas: 
+    "box box box"
+    "body body body";
+
+    .box {
+      border-bottom: 5px solid var(--secondary-color);
+    }
+  }
+}
